@@ -51,29 +51,25 @@ int main()
         // basically see if you get 0, 1 or many data structures
         // that pass the above simulation
         // print out the appropriate message
-        if (stack_ok || queue_ok || pqueue_ok)
+        if (stack_ok + queue_ok + pqueue_ok > 1)
         {
-            if (stack_ok)
-            {
-                if (queue_ok || pqueue_ok)
-                    printf("not sure\n");
-                else
-                    printf("stack\n");
-            }
-            else
-            {
-                if (queue_ok)
-                    if (pqueue_ok)
-                        printf("not sure\n");
-                    else
-                        printf("queue\n");
-                else
-                    printf("priority queue\n");
-            }
+            cout << "not sure" << endl;
+        }
+        else if (stack_ok)
+        {
+            cout << "stack" << endl;
+        }
+        else if (queue_ok)
+        {
+            cout << "queue" << endl;
+        }
+        else if (pqueue_ok)
+        {
+            cout << "priority queue" << endl;
         }
         else
         {
-            printf("impossible\n");
+            cout << "impossible" << endl;
         }
     }
 }
